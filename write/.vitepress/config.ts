@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  outDir: "../docs/",
   title: "GopherCron Docs",
   description: "golang 定时任务管理系统 gophercron 使用文档。",
   themeConfig: {
@@ -21,15 +22,17 @@ export default defineConfig({
           { text: "服务注册与发现", link: "/guide/micro" },
           { text: "可视化界面", link: "/guide/frontend" },
           { text: "自定义告警", link: "/guide/alert" },
+          { text: "Webhook", link: "/guide/webhook" },
         ],
       },
-      {
-        text: "Api文档",
-        items: [{ text: "鉴权", link: "/api/" }],
-      },
+      // {
+      //   text: "Api文档",
+      //   items: [{ text: "鉴权", link: "/api/" }],
+      // },
     ],
 
     socialLinks: [
+      { icon: "discord", link: "https://discord.gg/HCz6nuS6PD" },
       { icon: "github", link: "https://github.com/holdno/gopherCron" },
     ],
   },

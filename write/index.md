@@ -8,11 +8,11 @@ hero:
   tagline: 分布式、高可用、定时任务管理系统
   actions:
     - theme: brand
-      text: 使用文档
-      link: /markdown-examples
-    - theme: alt
-      text: 接口文档
-      link: /api-examples
+      text: 浏览文档
+      link: /guide/index
+    # - theme: alt
+    #   text: Discord
+    #   link: https://discord.gg/HCz6nuS6PD
     - theme: alt
       text: Github
       link: https://github.com/holdno/gopherCron

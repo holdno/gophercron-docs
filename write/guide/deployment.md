@@ -116,6 +116,7 @@ gophercron service -c {your service config path}
 ### 配置文件
 
 ```toml
+address = "" # 人工配置agent注册地址，否则自动获取网卡地址
 log_level = "debug" # 日志级别 debug info error
 log_path = "" # 日志数据路径
 shell = "/bin/bash" # 执行命令行的工具，根据自身机器情况而定
@@ -128,13 +129,6 @@ region = "center" # 网络维度，确保当前有同region的中心服务存在
 org_id = "gophercron" # 预留字段，目前没有实际作用
 weight = 100 # 该 agent 在中心调度任务时的权重，预定义好的定时任务目前不受该权重影响
 endpoint = "localhost:6306" # 中心服务的地址，域名也请带上端口号(HA等则仅需带上80 / 443端口号)
-
-# report_addr 与 mysql 选一填写，若mysql有配置，则丢弃report_addr配置
-[mysql]
-service="0.0.0.0:3306"
-username=""
-password=""
-database=""
 
 [auth]
 # public_key 需要与中心服务的private_key相匹配，中心请求时会带上由private_key签发的jwt，边缘agent需要能够使用该public_key完成解密

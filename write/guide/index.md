@@ -1,8 +1,12 @@
-<p align="center"><a href="/" target="_blank" rel="noopener noreferrer"><img width="200" src="http://img.holdno.com/github/holdno/gopher_cron/gopherCronLogo.png" alt="firetower logo"></a></p>
+<p align="center"><img width="200" src="http://img.holdno.com/github/holdno/gopher_cron/gopherCronLogo.png" alt="firetower logo"></p>
 
 <h1 align="center">GopherCron</h1>
 
-- 开箱即用的分布式可视化 crontab
+开箱即用的可视化分布式 crontab system
+
+### Report
+
+[Discord - gophercron](https://discord.gg/HCz6nuS6PD)
 
 ### Discussions Now
 
