@@ -158,4 +158,4 @@ gophercron client -c {your client config path}
 
 启动后通过服务日志观察服务是否注册成功，若成功，则可以在可视化界面中看到对应在线节点
 
-![在线节点示例](/file/在线节点示例.png)
+![在线节点示例](/在线节点示例.png)
