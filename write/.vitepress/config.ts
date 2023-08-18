@@ -25,10 +25,18 @@ export default defineConfig({
           { text: "Webhook", link: "/guide/webhook" },
         ],
       },
-      // {
-      //   text: "Api文档",
-      //   items: [{ text: "鉴权", link: "/api/" }],
-      // },
+      {
+        text: "使用教程",
+        items: [
+          { text: "创建任务", link: "/tutorial/create_task" },
+          { text: "手动执行任务", link: "/tutorial/schedule_task" },
+          { text: "任务编排(workflow)", link: "/tutorial/workflow" },
+        ],
+      },
+      {
+        text: "Release Note",
+        items: [{ text: "中心服务", link: "/note/center_release_note" }],
+      },
     ],
 
     socialLinks: [
