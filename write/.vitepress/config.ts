@@ -31,6 +31,7 @@ export default defineConfig({
           { text: "创建任务", link: "/tutorial/create_task" },
           { text: "手动执行任务", link: "/tutorial/schedule_task" },
           { text: "任务编排(workflow)", link: "/tutorial/workflow" },
+          { text: "多组织切换", link: "/tutorial/org" },
         ],
       },
       {

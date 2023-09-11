@@ -24,6 +24,12 @@
 - [cronexpr](https://github.com/gorhill/cronexpr) 提供 cron 表达式解析器
 - 🍉[水瓜](https://github.com/spacegrower/watermelon) 提供服务注册发现能力
 
+### 项目优势
+
+- 分布式定时任务管理
+- 任务编排
+- 响应式前端，移动端也可轻松管理任务
+
 ### 实现功能
 
 - 秒级定时任务
