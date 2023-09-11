@@ -26,7 +26,7 @@ endpoint = "" # 实现了推送协议的地址
 
 [micro]
 region = "center" # 无特殊调整建议固定
-org_id = "gophercron"  # 无特殊调整建议固定，为日后多租户feature做前提
+org_id = "gophercron"  # 用户服务注册与发现，agent与center需配置相同才互相可见
 # [micro.region_proxy] # 解决中心间夸网络环境调用问题，夸网路环境：无法直接通过服务发现拿到endpoint的IP地址进行调用，例如物理机与k8s pod间就属于不同网络环境
 # otherregion = "other region service endpoint" # 该域名需要解析到部署在 otherregion 的中心服务下
 
@@ -126,7 +126,7 @@ timeout = 5
 
 [micro]
 region = "center" # 网络维度，确保当前有同region的中心服务存在
-org_id = "gophercron" # 预留字段，目前没有实际作用
+org_id = "gophercron" # 需要与中心服务相同，用于服务发现
 weight = 100 # 该 agent 在中心调度任务时的权重，预定义好的定时任务目前不受该权重影响
 endpoint = "localhost:6306" # 中心服务的地址，域名也请带上端口号(HA等则仅需带上80 / 443端口号)
 

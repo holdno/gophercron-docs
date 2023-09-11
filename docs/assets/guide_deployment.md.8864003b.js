@@ -19,7 +19,7 @@ import{_ as s,o as n,c as a,Q as p}from"./chunks/framework.419948d5.js";const l=
 <span class="line"></span>
 <span class="line"><span style="color:#E1E4E8;">[</span><span style="color:#B392F0;">micro</span><span style="color:#E1E4E8;">]</span></span>
 <span class="line"><span style="color:#E1E4E8;">region = </span><span style="color:#9ECBFF;">&quot;center&quot;</span><span style="color:#E1E4E8;"> </span><span style="color:#6A737D;"># 无特殊调整建议固定</span></span>
-<span class="line"><span style="color:#E1E4E8;">org_id = </span><span style="color:#9ECBFF;">&quot;gophercron&quot;</span><span style="color:#E1E4E8;">  </span><span style="color:#6A737D;"># 无特殊调整建议固定，为日后多租户feature做前提</span></span>
+<span class="line"><span style="color:#E1E4E8;">org_id = </span><span style="color:#9ECBFF;">&quot;gophercron&quot;</span><span style="color:#E1E4E8;">  </span><span style="color:#6A737D;"># 用户服务注册与发现，agent与center需配置相同才互相可见</span></span>
 <span class="line"><span style="color:#6A737D;"># [micro.region_proxy] # 解决中心间夸网络环境调用问题，夸网路环境：无法直接通过服务发现拿到endpoint的IP地址进行调用，例如物理机与k8s pod间就属于不同网络环境</span></span>
 <span class="line"><span style="color:#6A737D;"># otherregion = &quot;other region service endpoint&quot; # 该域名需要解析到部署在 otherregion 的中心服务下</span></span>
 <span class="line"></span>
@@ -98,7 +98,7 @@ import{_ as s,o as n,c as a,Q as p}from"./chunks/framework.419948d5.js";const l=
 <span class="line"></span>
 <span class="line"><span style="color:#24292E;">[</span><span style="color:#6F42C1;">micro</span><span style="color:#24292E;">]</span></span>
 <span class="line"><span style="color:#24292E;">region = </span><span style="color:#032F62;">&quot;center&quot;</span><span style="color:#24292E;"> </span><span style="color:#6A737D;"># 无特殊调整建议固定</span></span>
-<span class="line"><span style="color:#24292E;">org_id = </span><span style="color:#032F62;">&quot;gophercron&quot;</span><span style="color:#24292E;">  </span><span style="color:#6A737D;"># 无特殊调整建议固定，为日后多租户feature做前提</span></span>
+<span class="line"><span style="color:#24292E;">org_id = </span><span style="color:#032F62;">&quot;gophercron&quot;</span><span style="color:#24292E;">  </span><span style="color:#6A737D;"># 用户服务注册与发现，agent与center需配置相同才互相可见</span></span>
 <span class="line"><span style="color:#6A737D;"># [micro.region_proxy] # 解决中心间夸网络环境调用问题，夸网路环境：无法直接通过服务发现拿到endpoint的IP地址进行调用，例如物理机与k8s pod间就属于不同网络环境</span></span>
 <span class="line"><span style="color:#6A737D;"># otherregion = &quot;other region service endpoint&quot; # 该域名需要解析到部署在 otherregion 的中心服务下</span></span>
 <span class="line"></span>
@@ -166,7 +166,7 @@ import{_ as s,o as n,c as a,Q as p}from"./chunks/framework.419948d5.js";const l=
 <span class="line"></span>
 <span class="line"><span style="color:#E1E4E8;">[</span><span style="color:#B392F0;">micro</span><span style="color:#E1E4E8;">]</span></span>
 <span class="line"><span style="color:#E1E4E8;">region = </span><span style="color:#9ECBFF;">&quot;center&quot;</span><span style="color:#E1E4E8;"> </span><span style="color:#6A737D;"># 网络维度，确保当前有同region的中心服务存在</span></span>
-<span class="line"><span style="color:#E1E4E8;">org_id = </span><span style="color:#9ECBFF;">&quot;gophercron&quot;</span><span style="color:#E1E4E8;"> </span><span style="color:#6A737D;"># 预留字段，目前没有实际作用</span></span>
+<span class="line"><span style="color:#E1E4E8;">org_id = </span><span style="color:#9ECBFF;">&quot;gophercron&quot;</span><span style="color:#E1E4E8;"> </span><span style="color:#6A737D;"># 需要与中心服务相同，用于服务发现</span></span>
 <span class="line"><span style="color:#E1E4E8;">weight = </span><span style="color:#79B8FF;">100</span><span style="color:#E1E4E8;"> </span><span style="color:#6A737D;"># 该 agent 在中心调度任务时的权重，预定义好的定时任务目前不受该权重影响</span></span>
 <span class="line"><span style="color:#E1E4E8;">endpoint = </span><span style="color:#9ECBFF;">&quot;localhost:6306&quot;</span><span style="color:#E1E4E8;"> </span><span style="color:#6A737D;"># 中心服务的地址，域名也请带上端口号(HA等则仅需带上80 / 443端口号)</span></span>
 <span class="line"></span>
@@ -193,7 +193,7 @@ import{_ as s,o as n,c as a,Q as p}from"./chunks/framework.419948d5.js";const l=
 <span class="line"></span>
 <span class="line"><span style="color:#24292E;">[</span><span style="color:#6F42C1;">micro</span><span style="color:#24292E;">]</span></span>
 <span class="line"><span style="color:#24292E;">region = </span><span style="color:#032F62;">&quot;center&quot;</span><span style="color:#24292E;"> </span><span style="color:#6A737D;"># 网络维度，确保当前有同region的中心服务存在</span></span>
-<span class="line"><span style="color:#24292E;">org_id = </span><span style="color:#032F62;">&quot;gophercron&quot;</span><span style="color:#24292E;"> </span><span style="color:#6A737D;"># 预留字段，目前没有实际作用</span></span>
+<span class="line"><span style="color:#24292E;">org_id = </span><span style="color:#032F62;">&quot;gophercron&quot;</span><span style="color:#24292E;"> </span><span style="color:#6A737D;"># 需要与中心服务相同，用于服务发现</span></span>
 <span class="line"><span style="color:#24292E;">weight = </span><span style="color:#005CC5;">100</span><span style="color:#24292E;"> </span><span style="color:#6A737D;"># 该 agent 在中心调度任务时的权重，预定义好的定时任务目前不受该权重影响</span></span>
 <span class="line"><span style="color:#24292E;">endpoint = </span><span style="color:#032F62;">&quot;localhost:6306&quot;</span><span style="color:#24292E;"> </span><span style="color:#6A737D;"># 中心服务的地址，域名也请带上端口号(HA等则仅需带上80 / 443端口号)</span></span>
 <span class="line"></span>
