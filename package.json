@@ -3,5 +3,9 @@
     "docs:dev": "vitepress dev write",
     "docs:build": "vitepress build write",
     "docs:preview": "vitepress preview write"
-  }
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.12"
+  },
+  "type": "module"
 }
