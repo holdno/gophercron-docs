@@ -91,13 +91,7 @@ user_name_key = "" # 可以在 claims 中拿到用户昵称的 key
 
 gophercron 作为高可用的定时任务管理系统，提供跨网络环境的部署姿势，支持多`数据中心`部署容灾
 
-gophercron 内置 region 概念，同名 region 即被视为同一`数据中心`，在`中心服务`配置中，开启 `deploy.proxy_host` 与 `micro.region_proxy` 两项配置即可实现`跨数据中心部署`
-
-- deploy.proxy_host  
-   该配置项表示当前`中心服务`的 proxy 服务监听的地址(端口)信息，每个数据中心的中心服务需要单独配置 proxy 域名解析到 proxy 服务地址上，并将 proxy 域名信息配置在其他`中心服务`的 `micro.region_proxy` 配置下
-
-- micro.region_proxy  
-   该配置表示`中心服务`跨数据中心的部署信息，key value 的形式配置每个`数据中心`(region)对应的 proxy 服务的地址
+gophercron v2.4.2 版本起，不在依赖 agent 节点的公网能力，复用 agent 到 center 服务建立的 gRPC Stream，实现任务调度
 
 实现设计见 [Region](/guide/micro#region)
 
@@ -125,7 +119,7 @@ report_addr = "" # 告警信息推送地址，业务可以实现对应接口，�
 timeout = 5
 
 [micro]
-region = "center" # 网络维度，确保当前有同region的中心服务存在
+region = "center" # 数据中心，仅业务方标记使用，可自定义命名(v2.4.2版本起)
 org_id = "gophercron" # 需要与中心服务相同，用于服务发现
 weight = 100 # 该 agent 在中心调度任务时的权重，预定义好的定时任务目前不受该权重影响
 endpoint = "localhost:6306" # 中心服务的地址，域名也请带上端口号(HA等则仅需带上80 / 443端口号)

@@ -14,6 +14,8 @@ region 的概念主要用于不同网络环境中服务发现的隔离，相同 
 
 ![跨Region调用示例](/跨Region调用示例.jpg)
 
+V2.4.2 版本起，不在需要 proxy，center 与 agent 通过 agent 主动注册时建立的 gRPC Stream 实现双向通信
+
 ## 应用场景
 
 - agent 启动时，优先完成服务注册，注册后，中心服务通过 agent 的注册信息(配置的 project 信息)，下发需要被该 agent 执行的任务列表，由 agent 在本地实现定时执行

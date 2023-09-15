@@ -18,10 +18,10 @@ hero:
       link: https://github.com/holdno/gopherCron
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 分布式高可用
+    details: agent分布式部署，保障同一时间，有且仅有一个agent执行对应任务
+  - title: Workflow
+    details: 支持任务流编排
+  - title: 响应式界面
+    details: 同时支持移动端与PC端，方便在任何场景调度任务
 ---
