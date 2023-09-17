@@ -1,6 +1,23 @@
 # Release Note
 
+## v2.4.3
+
+2023-09-17
+
+### 中心服务
+
+- 修复创建 webhook 的 store 实现问题，没有指定表名
+- 调整 webhook 接口相关请求参数，types -> type
+
+#### 升级 SQL
+
+```sql
+ALTER TABLE `gc_webhook` DROP COLUMN `secret`;
+```
+
 ## v2.4.2
+
+2023-09-15
 
 ### 中心服务
 
