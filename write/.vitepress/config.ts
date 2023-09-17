@@ -22,6 +22,7 @@ export default defineConfig({
           { text: "服务注册与发现", link: "/guide/micro" },
           { text: "可视化界面", link: "/guide/frontend" },
           { text: "自定义告警", link: "/guide/alert" },
+          { text: "项目管理", link: "/guide/project" },
           { text: "Webhook", link: "/guide/webhook" },
         ],
       },
@@ -36,7 +37,10 @@ export default defineConfig({
       },
       {
         text: "Release Note",
-        items: [{ text: "中心服务", link: "/note/center_release_note" }],
+        items: [
+          { text: "中心服务", link: "/note/center_release_note" },
+          { text: "Agen", link: "/note/agent_release_note" },
+        ],
       },
     ],
 

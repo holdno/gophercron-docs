@@ -1,6 +1,8 @@
 # WebHook
 
-![webhook管理入口]('/webhook管理入口.jpg')
+![webhook管理入口](/webhook管理入口.jpg)
+
+![webhook管理入口](/webhook管理界面.jpg)
 
 ## 钩子类型 (type:task-result)
 

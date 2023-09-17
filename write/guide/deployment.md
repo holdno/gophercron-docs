@@ -91,7 +91,7 @@ user_name_key = "" # 可以在 claims 中拿到用户昵称的 key
 
 gophercron 作为高可用的定时任务管理系统，提供跨网络环境的部署姿势，支持多`数据中心`部署容灾
 
-gophercron v2.4.2 版本起，不在依赖 agent 节点的公网能力，复用 agent 到 center 服务建立的 gRPC Stream，实现任务调度
+gophercron v2.4.2 版本起，不再依赖 agent 节点的公网能力，复用 agent 到 center 服务建立的 gRPC Stream，实现任务调度
 
 实现设计见 [Region](/guide/micro#region)
 
