@@ -4,4 +4,5 @@
 
 2023-09-17
 
-agent 不再需要公网环境，通过启动时服务注册建立的 gRPC Stream 双向流实现与中心服务的通信
+agent 不再需要公网环境，通过启动时服务注册建立的 gRPC Stream 双向流实现与中心服务的通信  
+支持 windows 环境，构建需增加 -tags=windows
