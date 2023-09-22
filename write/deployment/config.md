@@ -110,7 +110,7 @@ gophercron service -c {your service config path}
 
 部署后可通过 `{endpoint}/admin` 访问图形界面，前后端分离的部署方式请参考 [可视化界面](/guide/frontend)
 
-## 边缘 agent
+## Agent
 
 ### 配置文件
 

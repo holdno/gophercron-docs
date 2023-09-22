@@ -15,6 +15,7 @@ POST 方式，发送请求
 ```json
 {
     "type": "{warning type}",
+    "time": unix时间戳,
     "data": json-data
 }
 ```
@@ -26,6 +27,7 @@ POST 方式，发送请求
 ```json
 {
   "type": "system",
+  "time": "1696089600",
   "data": {
     "endpoint": "告警服务的ip",
     "type": "center-service / agent", // 告警服务类型
@@ -39,6 +41,7 @@ POST 方式，发送请求
 ```json
 {
   "type": "task",
+  "time": "1696089600",
   "data": {
     "agent_ip": "告警来源ip",
     "task_name": "任务名称",
@@ -55,6 +58,7 @@ POST 方式，发送请求
 ```json
 {
   "type": "workflow",
+  "time": "1696089600",
   "data": {
     "service_ip": "告警来源ip",
     "workflow_id": "workflow任务id",

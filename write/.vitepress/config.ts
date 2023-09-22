@@ -18,12 +18,19 @@ export default defineConfig({
         items: [
           { text: "项目简介", link: "/guide/index" },
           { text: "Cron表达式", link: "/guide/cron" },
-          { text: "部署", link: "/guide/deployment" },
           { text: "服务注册与发现", link: "/guide/micro" },
           { text: "可视化界面", link: "/guide/frontend" },
           { text: "自定义告警", link: "/guide/alert" },
           { text: "项目管理", link: "/guide/project" },
           { text: "Webhook", link: "/guide/webhook" },
+        ],
+      },
+      {
+        text: "部署",
+        items: [
+          { text: "配置文件", link: "/deployment/config" },
+          { text: "Docker部署", link: "/deployment/docker" },
+          { text: "源码部署", link: "/deployment/source" },
         ],
       },
       {
