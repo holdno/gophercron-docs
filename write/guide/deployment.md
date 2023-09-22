@@ -6,7 +6,10 @@
 
 ```toml
 log_level = "debug" # 日志级别 debug info error
-log_path = "" # 日志输出目录，留空则默认输出到stdout
+log_file = "" # 日志输出目录，留空则默认输出到stdout，同时日志文件的切分规则就不会再生效了
+log_age = 1 # 日志文件按天切割规则，不配默认为1day
+log_size = 100 # 日志文件按大小切割规则，不配默认100M
+log_compress = false # 日志文件切割后旧文件是否压缩，默认false
 report_addr = "" # 告警信息推送地址，业务可以实现对应接口，实现自定义告警通知
 
 [deploy]
@@ -27,8 +30,8 @@ endpoint = "" # 实现了推送协议的地址
 [micro]
 region = "center" # 无特殊调整建议固定
 org_id = "gophercron"  # 用户服务注册与发现，agent与center需配置相同才互相可见
-# [micro.region_proxy] # 解决中心间夸网络环境调用问题，夸网路环境：无法直接通过服务发现拿到endpoint的IP地址进行调用，例如物理机与k8s pod间就属于不同网络环境
-# otherregion = "other region service endpoint" # 该域名需要解析到部署在 otherregion 的中心服务下
+[micro.region_proxy] # 解决中心间夸网络环境调用问题，夸网路环境：无法直接通过服务发现拿到endpoint的IP地址进行调用，例如物理机与k8s pod间就属于不同网络环境
+otherregion = "other region service endpoint" # 该域名需要解析到部署在其它 region 的中心服务下
 
 # etcd
 [etcd]
@@ -48,7 +51,7 @@ auto_create=true # 是否自动建表
 
 # jwt用来做api的身份校验
 [jwt]
-# 部署时建议替换
+# 部署时建议替换，边缘通过签名访问中心获取jwt时使用
 private_key = """
 -----BEGIN PRIVATE KEY-----
 MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMzza7z4KGRHB2k3
@@ -78,7 +81,9 @@ tfKsupw9rpPkF25b9UOHL3h0KPdXaQgj866Dzc483JPcquRlJsrEOhfpY1vCt6Wq
 """
 exp = 168  # token 有效期(小时)
 
-[oidc] # oidc协议登录，授权后转为gophercron自身的登录模式，所以当前版本oidc退出登录不会影响gophercron
+# oidc协议登录，授权后转为gophercron自身的登录模式，所以当前版本oidc退出登录不会影响gophercron
+# 如果无oidc需求，可以不配置
+[oidc]
 client_id = ""
 client_secret = ""
 endpoint = ""
@@ -112,7 +117,11 @@ gophercron service -c {your service config path}
 ```toml
 address = "" # 人工配置agent注册地址，否则自动获取网卡地址
 log_level = "debug" # 日志级别 debug info error
-log_path = "" # 日志数据路径
+log_file = "" # 日志输出目录，留空则默认输出到stdout，同时日志文件的切分规则就不会再生效了
+log_age = 1 # 日志文件按天切割规则，不配默认为1day
+log_size = 100 # 日志文件按大小切割规则，不配默认100M
+log_compress = false # 日志文件切割后旧文件是否压缩，默认false
+
 shell = "/bin/bash" # 执行命令行的工具，根据自身机器情况而定
 report_addr = "" # 告警信息推送地址，业务可以实现对应接口，实现自定义告警通知
 
@@ -123,17 +132,6 @@ region = "center" # 数据中心，仅业务方标记使用，可自定义命名
 org_id = "gophercron" # 需要与中心服务相同，用于服务发现
 weight = 100 # 该 agent 在中心调度任务时的权重，预定义好的定时任务目前不受该权重影响
 endpoint = "localhost:6306" # 中心服务的地址，域名也请带上端口号(HA等则仅需带上80 / 443端口号)
-
-[auth]
-# public_key 需要与中心服务的private_key相匹配，中心请求时会带上由private_key签发的jwt，边缘agent需要能够使用该public_key完成解密
-public_key = """
------BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDM82u8+ChkRwdpNxbzJypio0xb
-+jdwWLd5DRcKL0cU8FlCD6fJH+YuMTMSf9RJaqQSIq0pKhyfHPHWnTSwLqudkzmG
-tfKsupw9rpPkF25b9UOHL3h0KPdXaQgj866Dzc483JPcquRlJsrEOhfpY1vCt6Wq
-0//vM79JBFBVoJ31mwIDAQAB
------END PUBLIC KEY-----
-"""
 
 [[auth.projects]]
 pid = 0 # project id
