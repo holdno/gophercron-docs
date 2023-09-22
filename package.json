@@ -5,7 +5,7 @@
     "docs:preview": "vitepress preview write"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0-rc.12"
+    "vitepress": "^1.0.0-rc.15"
   },
   "type": "module"
 }
