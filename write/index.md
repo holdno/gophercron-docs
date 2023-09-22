@@ -20,8 +20,8 @@ hero:
 features:
   - title: 分布式高可用
     details: agent分布式部署，保障同一时间，有且仅有一个agent执行对应任务
-  - title: Workflow
-    details: 支持任务流编排
+  - title: Workflow & Webhook
+    details: 支持任务流编排，支持自定义webhook
   - title: 响应式界面
     details: 同时支持移动端与PC端，方便在任何场景调度任务
 ---
