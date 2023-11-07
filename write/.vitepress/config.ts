@@ -20,6 +20,7 @@ export default defineConfig({
           { text: "Cron表达式", link: "/guide/cron" },
           { text: "服务注册与发现", link: "/guide/micro" },
           { text: "可视化界面", link: "/guide/frontend" },
+          { text: "Grafana Dashboard", link: "/guide/grafana" },
           { text: "自定义告警", link: "/guide/alert" },
           { text: "项目管理", link: "/guide/project" },
           { text: "Webhook", link: "/guide/webhook" },
