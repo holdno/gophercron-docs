@@ -36,3 +36,25 @@ docker kill ${NAME}
 ```shell
 ./gophercron client -c {your client config}
 ```
+
+### systemd
+
+```shell
+echo "[Unit]
+Description=GopherCron
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/usr/local/bin
+ExecStart=/usr/bin/sh -c '/usr/local/bin/gophercron {client / service} -c /usr/local/etc/gophercron/{your config name}.toml'
+Restart=always" > /etc/systemd/system/gophercron.service
+```
+
+```shell
+systemctl enable gophercron.service
+```
+
+```shell
+systemctl start gophercron.service
+```
