@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,Q as o}from"./chunks/framework.19f61efe.js";const d=JSON.parse('{"title":"自定义告警/通知","description":"","frontmatter":{},"headers":[],"relativePath":"guide/alert.md","filePath":"guide/alert.md"}'),l={name:"guide/alert.md"},p=o("",15),t=[p];function e(c,r,E,y,u,i){return a(),n("div",null,t)}const F=s(l,[["render",e]]);export{d as __pageData,F as default};

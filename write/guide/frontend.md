@@ -12,7 +12,7 @@
 
 ```shell
 VITE_API_V1_BASE_URL=http://localhost:6306/api/v1
-VITE_API_V1_WS_URL=ws://localhost:6306/api/v1/ws
+# VITE_API_V1_WS_URL=ws://localhost:6306/api/v1/ws # v2.4.5版本之后，gophercron自身已经实现了实时推送服务，不再需要该配置，除非有特殊定制的需求
 ```
 
 执行 `/scripts/build.sh` 完成前端项目的构建，并自行完成部署，即可实现前后端分离的部署方案
