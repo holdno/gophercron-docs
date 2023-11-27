@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: Github
       link: https://github.com/holdno/gopherCron
+  image:
+    src: /mobile.gif
+    alt: mobile
 
 features:
   - title: 分布式高可用
