@@ -17,7 +17,7 @@ hero:
       text: Github
       link: https://github.com/holdno/gopherCron
   image:
-    src: /mobile.gif
+    src: /mobile.webp
     alt: mobile
 
 features:
