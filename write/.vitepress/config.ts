@@ -47,7 +47,7 @@ export default defineConfig({
         text: "Release Note",
         items: [
           { text: "中心服务", link: "/note/center_release_note" },
-          { text: "Agen", link: "/note/agent_release_note" },
+          { text: "边缘Agent", link: "/note/agent_release_note" },
         ],
       },
     ],
