@@ -17,7 +17,7 @@ Golang 开箱即用的分布式 crontab system
     <image src="/mobile3.png" style="width: 30%; height: 55%;"/>
 </div>
 
-### 架构
+### 架构介绍
 
 <div style="width:100%; display: flex; margin-bottom: 20px">
     <image src="/gophercron架构图.jpg"/>
