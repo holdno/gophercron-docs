@@ -17,6 +17,18 @@ Golang 开箱即用的分布式 crontab system
     <image src="/mobile3.png" style="width: 30%; height: 55%;"/>
 </div>
 
+### 架构
+
+<div style="width:100%; display: flex; margin-bottom: 20px">
+    <image src="/gophercron架构图.jpg"/>
+</div>
+
+Gophercron 分为中心服务与边缘 agent 两部分，中心服务负责接收用户 api 请求，主要用来增删改查项目与项目下的任务，同时 api 提供一些任务临时调度、停止调度、强行结束等功能。  
+实际的任务调度是由边缘 agent 自身进行调度的(指定时执行)，agent 启动时会将自身节点注册进中心服务中，表示该 agent 上线运行，agent 会根据自身配置的项目向中心请求该项目下所有的任务，中心将任务列表响应给边缘，由边缘负责定时执行。  
+同项目多个 agent 通过与中心服务建立的长连接来进行抢锁，同一时间调度的任务，哪个 agent 拿到锁哪个 agent 来执行，拿锁行为有 5s 的最短释放周期，所以 Gophercron 最细粒度的调度间隔为 5s，同时也仅能保障机器间时钟偏差值在 5s 内才不会出现任务异常执行的情况。
+
+API 请求下发逻辑可以参考图中 绿色线 部分。
+
 ### 监控面板
 
 [Grafana Dashboard 19874](https://grafana.com/grafana/dashboards/19874-gophercron-dashboard/)
