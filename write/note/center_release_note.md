@@ -4,9 +4,21 @@
 
 2025-03-13
 
-- 中心增加“Task Docter”,自动检查因 Agent 状态异常导致的任务状态持续性异常的问题，会自动尝试恢复任务状态，使下次任务可以顺利执行。
+- 中心增加“Task Doctor”,自动检查因 Agent 状态异常导致的任务状态持续性异常的问题，会自动尝试恢复任务状态，使下次任务可以顺利执行。
+
+新增数据库表 gc_agent_activity，可通过配置开发自动建表，或手动创建
+
+```sql
+CREATE TABLE `gc_agent_activity` (
+  `client_ip` varchar(32) NOT NULL COMMENT '边缘agentip',
+  `project_id` bigint(20) NOT NULL COMMENT '关联项目id',
+  `active_time` bigint(20) NOT NULL COMMENT '创建时间',
+  UNIQUE KEY `idx_client_ip_project_id` (`client_ip`,`project_id`),
+  KEY `idx_active_time` (`active_time`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+```
+
 - 中心兜底任务状态，当出现边缘节点与中心任务调度状态不一致时，通过告警提醒相关同学关注节点状态。
-- 优化边缘节点服务注册失败重试逻辑
 
 ## v2.4.7
 
